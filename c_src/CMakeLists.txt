@@ -159,7 +159,6 @@ include(FindErlang)
 set(CMAKE_LIBRARY_PATH ${CMAKE_LIBRARY_PATH} ${ERLANG_EI_LIBRARY_PATH})
 
 find_library(ERLANG_EI_LIB ei)
-find_library(ERLANG_ERL_INTERFACE_LIB erl_interface)
 include_directories(${ERLANG_EI_INCLUDE_PATH})
 include_directories(${ERLANG_ERTS_INCLUDE_PATH})
 #--------------------------------------------------------------------------------
@@ -248,7 +247,6 @@ target_link_libraries(
     ${ErlangRocksDBNIF_TARGET}
     PRIVATE
     ${TARGET_LINKER_OPTIONS}
-    ${ERLANG_ERL_INTERFACE_LIB}
     ${ERLANG_EI_LIB}
     ${ROCKSDB_LIBRARIES}
     ${ZSTD_LIBRARY}
